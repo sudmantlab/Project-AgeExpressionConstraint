@@ -91,7 +91,7 @@ data/
 	|-- beta_age_normed.csv
 |-- phyloP/
 	|-- mus_exon_phyloP_mean.csv
-  |-- mus_exon_phyloP_first.csv
+  	|-- mus_exon_phyloP_first.csv
 |-- dnds/
 	|-- ENSMUST_all.json
 	|-- ensmust_dnds_merged.txt
