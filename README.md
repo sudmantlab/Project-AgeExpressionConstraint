@@ -153,4 +153,4 @@ Figure 4. `./gsea/`
 - uc berkeley email: p.stein@berkeley.edu (active)
 - uw email: pstein@uw.edu (active)
 
-Template credit for `generate_config_file.py` to Alma Hallgren and template credit for [gsea.R] to Peter Sudmant.
+Template credit for `generate_config_file.py` to Alma Hallgren and template credit for `{phyloP/dnds)_gsea.R` to Peter Sudmant.
