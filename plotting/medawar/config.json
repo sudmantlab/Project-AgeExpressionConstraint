@@ -1,0 +1,27 @@
+{
+    "tissues": [
+        "Limb_Muscle", 
+        "GAT",
+        "Myeloid",
+        "BAT",
+        "MAT",
+        "Diaphragm",
+        "Trachea",
+        "SCAT",
+        "Aorta",
+        "Marrow",
+        "Heart",
+        "Pancreas",
+        "Lung",
+        "Thymus",
+        "Mammary_Gland",
+        "Spleen",
+        "Tongue",
+        "Large_Intestine",
+        "Skin",
+        "Liver",
+        "Kidney",
+        "Bladder",
+        "Brain_Myeloid"
+        ]
+    }

@@ -1,0 +1,49 @@
+#### PIPELINE PREPARE EACH GENE ALIGNMENT ####
+""" Split mouse-rat-human genome alignment per gene """
+
+# cwd
+cd /global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/
+
+## FASTA headers with only ID (31695660)
+seqkit seq knownGene.exonNuc.fa -i --only-id > knownGene.exonNuc_ID.fa
+
+## Get all sequence headers (31695660)
+less knownGene.exonNuc_ID.fa | grep ">" > seq_headers.txt
+
+## Get all sequence names (31695660)
+awk '{print $1}' seq_headers.txt  | sed 's/^.//' > seq_names.txt
+
+## Get taxa of interest (2641305)
+# later on filtered for mm10, hg19, rn5 instead
+grep -E 'mm10|hg19|rn5|panTro4|ponAbe2' seq_names.txt > seq_taxa.txt
+
+## Get unique ENSMUST and exon
+# Unique ENSMUST (67238) and exon
+awk -F_ '{print $1}' seq_taxa.txt | sort -u > ensmust_unique.txt
+
+## Get ENSMUST and exon list
+mkdir lists
+for ensmust in `cat ensmust_unique.txt`; do grep -E "$ensmust" seq_taxa.txt > ./lists/"$ensmust".lst; done
+
+
+## Split fa by ENSMUST and exon combination 
+# add some print statements next time
+# Later on figured I only need the first exon, could have saved work here
+
+for ensmust in `cat ensmust_unique.txt`; do 
+	seqtk subseq knownGene.exonNuc_ID.fa ./lists/"$ensmust".lst > "$ensmust".fa
+	less "$ensmust".fa | grep ">" > "$ensmust"_header.txt
+	awk '{print $1}' "$ensmust"_header.txt | sed 's/^.//' > "$ensmust"_names.txt
+	awk -F_ '{print "_"$3"_"$4}' "$ensmust"_names.txt | sort -u > exon_unique.txt;
+	for exon in `cat exon_unique.txt`; do 
+		grep -E "$exon" "$ensmust"_names.txt > "$exon".lst
+		seqtk subseq "$ensmust".fa "$exon".lst > "$ensmust""$exon".fa
+		seqkit seq "$ensmust""$exon".fa -i --only-id > ./ENSMUST_fa/"$ensmust""$exon"_ID.fa
+		rm "$ensmust""$exon".fa
+		rm "$exon".lst;
+	done
+	rm "$ensmust".fa
+	rm "$ensmust"_header.txt
+	rm "$ensmust"_names.txt
+	rm exon_unique.txt;
+done

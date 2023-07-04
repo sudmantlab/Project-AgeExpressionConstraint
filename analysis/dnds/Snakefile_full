@@ -1,0 +1,53 @@
+import json
+import os
+
+samples = config["samples"]
+
+data_dir = "/global/scratch/users/pstein/Project-AgeExpressionConstraint/"
+
+def get_outputs_RELAX(wildcards):
+     outputs_RELAX = []
+     samples = config["samples"].keys()
+     for sample in samples:
+     	 outputs_RELAX.append(data_dir + "/data-raw/dnds/relax/" + sample + "_RELAX.json")
+     return outputs_RELAX
+     
+rule all:
+	input:
+		get_outputs_RELAX,
+		expand(data_dir + "/data/dnds/data" + "/{sample}" + "_DNDS.txt", sample = samples)
+		
+rule align:
+    input:
+        data_dir + "/output/intermediate/{sample}_TAXA.fa"
+    output: 
+    	NT = data_dir + "/data-raw/dnds/intermediate/{sample}_NT.fa",
+    	AA = data_dir + "/data-raw/dnds/intermediate/{sample}_AA.fa"
+    shell:
+       """java -jar /Users/philippasteinberg/Desktop/macse_v2.06.jar -prog alignSequences -seq {input} -out_NT {output.NT} -out_AA {output.AA}"""
+      
+rule export:
+    input:
+        data_dir + "/data-raw/dnds/intermediate/{sample}_NT.fa"
+    output:
+    	NT = data_dir + "/data-raw/dnds/intermediate/{sample}_NT_CLEAN.fa",
+    	AA = data_dir + "/data-raw/dnds/intermediate/{sample}_AA_CLEAN.fa"
+    shell:
+        """java -jar /Users/philippasteinberg/Desktop/macse_v2.06.jar -prog exportAlignment -align {input} -codonForInternalStop NNN -codonForInternalFS --- -charForRemainingFS - -out_NT {output.NT} -out_AA {output.AA}"""
+		
+rule relax:
+    input:
+        FA = data_dir + "/data-raw/dnds/intermediate/{sample}_NT_CLEAN.fa",
+        TREE = data_dir + "/data-raw/dnds/species_TimeTree_renamed_3.nwk"
+    output:
+       data_dir + "/data-raw/dnds/{sample}_RELAX.json"
+    shell:
+        """hyphy LIBPATH=/Users/philippasteinberg/opt/anaconda3/envs/runhyphy/share/hyphy relax --alignment {input.FA} --tree {input.TREE} --test Foreground --output {output}"""
+        
+rule extract_dnds:
+	input:
+		data_dir + "/data-raw/dnds/{sample}_RELAX.json"
+	output:
+		data_dir + "/data/dnds/data/{sample}_DNDS.txt"
+	shell:
+		"""jq '.["fits"]["MG94xREV with separate rates for branch sets"]["Rate Distributions"]["non-synonymous/synonymous rate ratio for *Test*"][0][0]' {input} > {output}"""

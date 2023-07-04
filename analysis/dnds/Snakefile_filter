@@ -1,0 +1,33 @@
+import json
+import os
+
+samples = config["samples"]
+
+data_dir = "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/"
+
+def get_outputs_NT_TAXA(wildcards):
+    outputs_NT_TAXA = []
+    for sample in samples:
+        outputs_NT_TAXA.append(data_dir + "/intermediate/" + sample + "_TAXA.fa")
+    return outputs_NT_TAXA
+
+rule all:
+    input:
+        get_outputs_NT_TAXA
+
+rule rename:
+    input:
+        data_dir + "/ENSTMUS_fa/{sample}_ID.fa"
+    output:
+        data_dir + "/intermediate/{sample}_NAME.fa"
+    shell:
+        """awk -F '_' '/^>/ {{print ">"$2; next}} {{print}}' {input} > {output}"""
+
+rule filter:
+    input:
+        FA = data_dir + "/intermediate/{sample}_NAME.fa",
+        LST = data_dir + "taxa_names.lst"
+    output:
+        data_dir + "/intermediate/{sample}_TAXA.fa"
+    shell:
+        """seqtk subseq {input.FA} {input.LST} > {output} && rm {input.FA}"""

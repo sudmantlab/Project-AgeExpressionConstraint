@@ -1,0 +1,16 @@
+{
+	"home": "/global/home/users/pstein",
+	"ENSMUST_fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/ENSMUST_fa/",
+	"ENSMUST_all.json": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/",
+	"TAXA.fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/intermediate/",
+	"NT.fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/intermediate/",
+	"AA.fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/intermediate/",
+	"NT_CLEAN.fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/intermediate/",
+	"AA_CLEAN.fa": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/intermediate/",
+	"RELAX.json": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/relax/",
+	"dnds.txt": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/data/",
+	"dnds_merged": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/ensmust_dnds_merged.txt",
+	"dnds_processed": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/ensmust_dnds_processed.csv",
+	"dnds_filtered": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/ensmust_dnds_filtered_100bp.csv",
+	"tree": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/data/species_TimeTree_renamed_3.nwk"
+}

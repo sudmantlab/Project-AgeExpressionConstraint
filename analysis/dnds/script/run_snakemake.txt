@@ -1,0 +1,43 @@
+#### CALCULATE DNDS SCORE PER GENE ###
+""" Calculate dNdS per canonical exon for mouse-rat-human genome alignment """
+
+## Make tree in TimeTree
+# /global/scratch/users/pstein/Project-AgeExpressionConstraint/data/dnds/species_TimeTree_renamed_3.nwk
+
+## Create conda environment and install hyphy (1 time only)
+conda create -n runhyphy
+
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
+conda update conda
+conda update --all
+conda install hyphy
+
+# Create tmux session for this workflow
+tmux new -s calculate_dnds
+tmux a -t calculate_dnds
+
+# cwd
+cd /global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/dnds/
+
+## Generate config json with all ensmust (exon 1 only)
+# generates ENSMUST_all.json
+cd scripts
+python3 generate_config_file_ENSMUST.py
+
+## Preprocess and subset files into mm10,rn5,hg19
+snakemake --configfile ENSMUST_all.json -s Snakefile_filter -n
+snakemake --configfile ENSMUST_all.json -s Snakefile_filter --cores 6
+
+## Run alignment, export, relax, extract dnds for test branch 
+# force keep going because some msa do not have a sequence for each taxa and if all sequences are similar, relax gets no values
+cd ..
+conda activate runhyphy
+snakemake --configfile ENSMUST_all.json -s Snakefile_full --rerun-incomplete --keep-going -n
+snakemake --configfile ENSMUST_all.json -s Snakefile_full --rerun-incomplete --keep-going --cores 7
+
+## Make snakemake diagram 
+snakemake -s Snakefile_full --dag | dot -Tsvg > dag.svg

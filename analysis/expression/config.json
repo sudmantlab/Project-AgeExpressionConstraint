@@ -1,0 +1,39 @@
+{
+    "home": "/global/home/users/pstein/",
+    "TabulaMurisSenis": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/",
+    "beta_age": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data/beta_age/",
+    "bad_cells": {
+        "Kidney": ["kidney interstitial fibroblast"], 
+        "Skin": ["fibroblast"], 
+        "Myeloid": ["macrophage", "microglial cell"],
+        "Lung": ["mature NK T cell", "type I pneumocyte", "plasma cell", "intermediate monocyte","respiratory basal cell"],
+        "Marrow": ["lymphoid progenitor cell"], 
+        "Trachea": ["keratinocyte"],
+        "Liver": ["CD8-positive, alpha-beta T cell"]
+            },
+    "Tissues": [
+        "Large_Intestine",
+        "Kidney",
+        "Mammary_Gland",
+        "SCAT",
+        "Aorta",
+        "Skin",
+        "Diaphragm",
+        "Myeloid",
+        "Lung",
+        "Spleen",
+        "Thymus",
+        "Pancreas",
+        "Marrow",
+        "Limb_Muscle",
+        "MAT",
+        "Trachea",
+        "Heart",
+        "BAT",
+        "Brain_Myeloid",
+        "Liver",
+        "Bladder",
+        "Tongue",
+        "GAT"
+        ]
+    }

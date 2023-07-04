@@ -1,0 +1,27 @@
+{
+    "samples": {
+        "Large_Intestine": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Large_Intestine",
+        "Kidney": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Kidney",
+        "Mammary_Gland": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Mammary_Gland",
+        "SCAT": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-SCAT",
+        "Aorta": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Aorta",
+        "Skin": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Skin",
+        "Diaphragm": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Diaphragm",
+        "Myeloid": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Myeloid",
+        "Lung": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Lung",
+        "Spleen": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Spleen",
+        "Thymus": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Thymus",
+        "Pancreas": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Pancreas",
+        "Marrow": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Marrow",
+        "Limb_Muscle": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Limb_Muscle",
+        "MAT": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-MAT",
+        "Trachea": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Trachea",
+        "Heart": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Heart",
+        "BAT": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-BAT",
+        "Brain_Myeloid": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Brain_Myeloid",
+        "Liver": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Liver",
+        "Bladder": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Bladder",
+        "Tongue": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-Tongue",
+        "GAT": "/global/scratch/users/pstein/Project-AgeExpressionConstraint/data-raw/expression/TabulaMurisSenis_h5ad/tabula-muris-senis-facs-processed-official-annotations-GAT"
+    }
+}

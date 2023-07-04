@@ -1,0 +1,7 @@
+{
+	"home": "/global/home/users/pstein",
+	"Mouse_PhyloP": "/Users/philippasteinberg/Desktop/Project-AgeExpressionConstraint/data-raw/phyloP/mm10.60way.phyloP60way.bw",
+	"knownGene": "/Users/philippasteinberg/Desktop/Project-AgeExpressionConstraint/data-raw/phyloP/knownGene.txt",
+    "PhyloP_mean": "/Users/philippasteinberg/Desktop/Project-AgeExpressionConstraint/data/phyloP/mus_exon_phyloP_mean.csv",
+    "PhyloP_first": "/Users/philippasteinberg/Desktop/Project-AgeExpressionConstraint/data/phyloP/mus_exon_phyloP_first.csv"
+}
